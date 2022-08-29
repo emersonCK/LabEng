@@ -2,7 +2,7 @@ var el = document.getElementById("btVerificar");
 el.addEventListener("click", isPalindromo, false);
 
 function isPalindromo() {
-    let texto = document.querySelector('#txtbox').value;
+    let texto = document.getElementById('txtbox').value;
     let textoSemEspaco = texto.replace(" ", "").toLowerCase();
     let textInvertido = inverter(textoSemEspaco);
 
