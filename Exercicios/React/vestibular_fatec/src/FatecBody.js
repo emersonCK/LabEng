@@ -11,13 +11,10 @@ function FatecBody() {
     <section class="jumbotron text-center">
         <div class="container">
           <strong>
+          <img src={img1} width="239" class="card-img-top" alt="logo"/>
           <h1 class="jumbotron-heading">Vestibular Fatec</h1>
           </strong>
           <p class="lead text-muted">Deseja se qualificar e ingressar no mercado de trabalho de forma rápida? Então saiba que o vestibular FATEC 2022 é uma ótima oportunidade. O vestibular FATEC 2022 está com inscrições abertas e com vagas sendo ofertadas. Siga nos acompanhando para conferir mais informações sobre!</p>
-          <p>
-            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-          </p>
         </div>
       </section>
 
@@ -32,8 +29,7 @@ function FatecBody() {
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Acessar</button>
                     </div>
                     <small class="text-muted">9 mins</small>
                   </div>
@@ -47,8 +43,7 @@ function FatecBody() {
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Acessar</button>
                     </div>
                     <small class="text-muted">9 mins</small>
                   </div>
@@ -62,8 +57,7 @@ function FatecBody() {
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Acessar</button>
                     </div>
                     <small class="text-muted">9 mins</small>
                   </div>
