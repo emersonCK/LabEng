@@ -1,18 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <label id="txtarray"> Array: </label>
-
-    <label for="valor">Valor: </label>
-    <input type="text" id="valor" name="valor"> </input>
-    <button type="submit" id="btnAdicionar">Adicionar</button>
-    <p id="lista">
-    </p>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Incorporando Expressões em JSX - Parte 1</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <!-- Script Babel -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <!-- type define o uso do babel no script -->
+        <script type="text/babel">
+            var texto = "Venha estudar na Fatec";
+            var result = "";
+            var count = 0;
+            function digitar() {
+                setTimeout(() => {
+                    inserir(texto[count])
+                }, 200); 
+            }
+            
+            function inserir(letra) {
+                result += letra;
+                count++;
+                if(count < texto.length)
+                    setTimeout(() => {
+                        inserir(texto[count])
+                    }, 200); 
+                const element = (<h1>{result}</h1>);
+                ReactDOM.render(element,document.getElementById('root'));
+            }
+            digitar();
+        </script>
+    </body>
 </html>
