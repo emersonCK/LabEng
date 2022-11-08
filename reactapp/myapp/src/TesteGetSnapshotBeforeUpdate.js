@@ -1,7 +1,7 @@
 import React from "react"
 
 
-class GetSnapshotBeforeUpdate extends React.Component {
+class TesteGetSnapshotBeforeUpdate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {favoritecolor5: "red"};
@@ -30,5 +30,4 @@ class GetSnapshotBeforeUpdate extends React.Component {
   }
 }
 
-
-export default GetSnapshotBeforeUpdate;
+export default TesteGetSnapshotBeforeUpdate;

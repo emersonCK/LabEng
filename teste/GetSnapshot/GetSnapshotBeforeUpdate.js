@@ -2,7 +2,7 @@ import React from "react"
 
 
 class GetSnapshotBeforeUpdate extends React.Component {
-  constructor(props) {
+    constructor(props) {
     super(props);
     this.state = {favoritecolor5: "red"};
   }
@@ -11,10 +11,12 @@ class GetSnapshotBeforeUpdate extends React.Component {
       this.setState({favoritecolor5: "yellow"})
     }, 1000)
   }
+
   getSnapshotBeforeUpdate(prevProps, prevState) {
     document.getElementById("div1").innerHTML =
     "Before the update, the favorite was " + prevState.favoritecolor5;
   }
+
   componentDidUpdate() {
     document.getElementById("div2").innerHTML =
     "The updated favorite is " + this.state.favoritecolor5;
@@ -29,6 +31,5 @@ class GetSnapshotBeforeUpdate extends React.Component {
     );
   }
 }
-
 
 export default GetSnapshotBeforeUpdate;
