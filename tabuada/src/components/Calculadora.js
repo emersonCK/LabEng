@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 import './index.css'
-import Display from './Display'
-import Botao from './Botao'
-
 
 export default function Calculadora() {
 
@@ -14,10 +11,8 @@ export default function Calculadora() {
 
     function _adicionar(label) {
 
-        // validar: apenas um ponto no displey
         if (label === '.' && valorDisplay.includes('.')) return
 
-        //validar: retirar zero a esquerda e Validar: checar variavel limparDisplay
         const check_limparDisplay = valorDisplay === '0' || limparDisplay
         const valorAtual = check_limparDisplay ? '' : valorDisplay
 
@@ -58,6 +53,12 @@ export default function Calculadora() {
             setValores(novos_valores)
             setIndice(igual ? 0 : 1)
 
+            // if(igual) {
+            //     const valorAtual = valorDisplay
+            //     _limpar()
+            //     _adicionar(valorAtual)
+            // }
+
         }
     }
 
@@ -69,27 +70,39 @@ export default function Calculadora() {
         setIndice(0)
     }
 
+    function _limpar2() {
+        const novo_valorDisplay = valorDisplay.substr(0, valorDisplay.length - 1)
+        const novos_valores = [...valores]
+
+        if (novo_valorDisplay !== '.') novos_valores[indice] = parseFloat(novo_valorDisplay)
+
+        setValorDisplay(novo_valorDisplay)
+        setLimparDisplay(false)
+        setValores(novos_valores)
+    }
+
     return (
         <div className='calculadora'>
-            <Display valor={valorDisplay}></Display>
-
-            <Botao label='AC' funcao={_limpar} span='span-3'></Botao>
-            <Botao label='/' funcao={_operacao} operacao></Botao>
-            <Botao label='7' funcao={_adicionar} ></Botao>
-            <Botao label='8' funcao={_adicionar} ></Botao>
-            <Botao label='9' funcao={_adicionar} ></Botao>
-            <Botao label='*' funcao={_operacao} operacao></Botao>
-            <Botao label='4' funcao={_adicionar} ></Botao>
-            <Botao label='5' funcao={_adicionar} ></Botao>
-            <Botao label='6' funcao={_adicionar} ></Botao>
-            <Botao label='-' funcao={_operacao} operacao></Botao>
-            <Botao label='1' funcao={_adicionar} ></Botao>
-            <Botao label='2' funcao={_adicionar} ></Botao>
-            <Botao label='3' funcao={_adicionar} ></Botao>
-            <Botao label='+' funcao={_operacao} operacao></Botao>
-            <Botao label='0' funcao={_adicionar} span='span-2'></Botao>
-            <Botao label='.' funcao={_adicionar} ></Botao>
-            <Botao label='=' funcao={_operacao} operacao></Botao>
+            <div className='display'> {valorDisplay} </div>
+            <button className="button op" onClick={() => _limpar()}>AC</button>
+            <button className="button op" onClick={() => _limpar2()}>C</button>
+            <button className="button op" onClick={() => _operacao('%')}>%</button>
+            <button className="button op" onClick={() => _operacao('/')}>/</button>
+            <button className="button" onClick={() => _adicionar('7')}>7</button>
+            <button className="button" onClick={() => _adicionar('8')}>8</button>
+            <button className="button" onClick={() => _adicionar('9')}>9</button>
+            <button className="button op" onClick={() => _operacao('*')}>*</button>
+            <button className="button" onClick={() => _adicionar('4')}>4</button>
+            <button className="button" onClick={() => _adicionar('5')}>5</button>
+            <button className="button" onClick={() => _adicionar('6')}>6</button>
+            <button className="button op" onClick={() => _operacao('-')}>-</button>
+            <button className="button" onClick={() => _adicionar('1')}>1</button>
+            <button className="button" onClick={() => _adicionar('2')}>2</button>
+            <button className="button" onClick={() => _adicionar('3')}>3</button>
+            <button className="button op" onClick={() => _operacao('+')}>+</button>
+            <button className="button span-2" onClick={() => _adicionar('0')}>0</button>
+            <button className="button op" onClick={() => _operacao('.')}>.</button>
+            <button className="button op" onClick={() => _operacao('=')}>=</button>
         </div>
     )
 }
