@@ -1,4 +1,5 @@
 - npm install
+-- Criar a base de dados "loja"
 - npm run migrate
 - npm run seed
 - npm start
